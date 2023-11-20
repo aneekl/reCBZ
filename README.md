@@ -34,13 +34,9 @@ If you're on the latest Python version (3.11), you may need to manually install 
     pip install https://download.lfd.uci.edu/pythonlibs/archived/lxml-4.9.0-cp311-cp311-win_amd64.whl
 </details>
 
-Linux, MacOS, and Windows:
+build from source:
 
-    python -m pip install reCBZ
-
-or build from source:
-
-    git clone https://github.com/avalonv/reCBZ
+    git clone https://github.com/aneekl/reCBZ
 
     python -m pip install -e reCBZ
 
