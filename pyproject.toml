@@ -1,5 +1,5 @@
 [build-system]
-requires      = ["setuptools>=61.0.0", "wheel"]
+requires = ["setuptools>=61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -20,13 +20,14 @@ classifiers = [
 keywords = ["manga", "comics", "cbz", "ebook", "epub"]
 dependencies = [
     "pillow >= 9.1",
+    "pillow-avif-plugin >= 1.4",
     "ebooklib >= 0.18",
     'tomli; python_version < "3.11"',
 ]
 requires-python = ">=3.9"
 
 [project.optional-dependencies]
-dev = ["bumpver", "pip-tools",]
+dev = ["bumpver", "pip-tools"]
 
 [project.urls]
 Homepage = "https://github.com/avalonv/reCBZ"
