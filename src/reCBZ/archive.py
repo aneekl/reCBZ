@@ -130,11 +130,14 @@ def convert_page_worker(source, options, savedir=None):
     page.fmt = new_fmt
 
     # apply format specific actions
-    if new_fmt is Jpeg:
-      if not img.mode == 'RGB':
-          log_buff += '|trans: mode RGB\n'
-          img = img.convert('RGB')
-
+    # if new_fmt is Jpeg:
+    #   if not img.mode == 'RGB':
+    #       log_buff += '|trans: mode RGB\n'
+    #       img = img.convert('RGB')
+    if not img.mode == 'RGB':
+        log_buff += '|trans: mode RGB\n'
+        img = img.convert('RGB')
+    
     # transform
     if options['grayscale']:
         log_buff += '|trans: mode L\n' # me lol
