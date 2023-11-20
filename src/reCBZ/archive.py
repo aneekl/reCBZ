@@ -34,12 +34,13 @@ def get_size_that_preserves_ratio(*, img_size, size_of_viewport):
     width, height = img_size
 
     aspect = width / height
-    if x / y >= aspect:
-        x = round_aspect(y * aspect, key=lambda n: abs(aspect - n / y))
-    else:
-        y = round_aspect(
-            x / aspect, key=lambda n: 0 if n == 0 else abs(aspect - x / n)
-        )
+    x = round_aspect(y * aspect, key=lambda n: abs(aspect - n / y))
+    # if x / y >= aspect:
+    #     x = round_aspect(y * aspect, key=lambda n: abs(aspect - n / y))
+    # else:
+    #     y = round_aspect(
+    #         x / aspect, key=lambda n: 0 if n == 0 else abs(aspect - x / n)
+    #     )
     return x, y
 
 
@@ -145,7 +146,7 @@ def convert_page_worker(source, options, savedir=None):
         new_size = options['size']
         # preserve aspect ratio for landscape images
         if page.landscape:
-            new_size = new_size[::-1]
+            new_size = new_size
         n_width, n_height = new_size
         if options['keep_ratio']:
             resize_size = get_size_that_preserves_ratio(img_size=(width, height), size_of_viewport=new_size)
