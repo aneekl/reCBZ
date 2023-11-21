@@ -9,7 +9,7 @@ from functools import partial
 from pathlib import Path
 from itertools import chain
 
-from PIL import Image, UnidentifiedImageError
+from PIL import Image, UnidentifiedImageError, ImageFile
 import pillow_avif
 
 import reCBZ
@@ -20,6 +20,7 @@ from reCBZ.util import mylog, map_workers, worker_sigint_CTRL_C, human_sort
 # TODO:
 # include docstrings
 
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 VALID_BOOK_FORMATS: tuple = ('cbz', 'zip', 'epub', 'mobi')
 SOURCE_NAME: str = 'Source'
 chapter_prefix: str = 'v'  # :) :D C:
