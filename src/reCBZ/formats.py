@@ -23,7 +23,7 @@ class Jpeg(LossyFmt):
         img.save(dest, format='JPEG', optimize=True, quality=cls.quality)
 
 
-class Jpeg(LossyFmt):
+class Avif(LossyFmt):
     name: str = 'avif'
     ext: tuple = '.avif',
     desc: str = 'AVIF'
@@ -72,5 +72,5 @@ class Png(LosslessFmt):
         img.save(dest, format='PNG', optimize=True, compress_level=9)
 
 
-FormatList = (Jpeg, WebpLossy, WebpLossless, Png)
+FormatList = (Jpeg, WebpLossy, WebpLossless, Png, Avif)
 FormatDict = {cls.name: cls for cls in FormatList}
